@@ -10,19 +10,18 @@
 		Nombre: <input type="text" name="name" id="name"><br>
 		Mail: <input type="text" name="email" id="email"><br>
 	</form> 
-	<button onclick="myFunction()">Mostrar</button>
+	<button onclick="myFunction(); return false">Mostrar</button>
 
 	<p id="mostrarNombre"></p>
 	<p id="mostrarMail"></p>
 
 	<script>
 		function myFunction() {
-			var nombre = document.getElementsById("name");
-			var mail = document.getElementsById("email");
+			var nombre = document.getElementById("name").value;
+			var mail = document.getElementById("email").value;
 
-			var resultado = document.getElementsById("mostrarMail");
-			resultado.innerHTML = nombre;
-			
+			var resultado = document.getElementById("mostrarMail");
+			resultado.innerHTML = nombre + "<br>" + mail;		
 		}
 	</script>
 </body>
